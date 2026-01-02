@@ -1,0 +1,101 @@
+<app-frete></app-frete>
+<div
+  class="w-full h-20 md:h-26 relative bg-white flex items-center px-3 overflow-hidden"
+>
+  <!-- Logo central -->
+  <div
+    class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-none"
+  >
+    <img
+      src="../../../../assets/logo.png"
+      alt="Renata-Scrubs-Logo"
+      class="h-44 md:h-48 w-full"
+    />
+  </div>
+
+  <!-- Botão menu -->
+  @if (isControlRoute()) {
+  <!-- Botão menu - aparece apenas no mobile -->
+  <button (click)="toggleMenu()" class="mr-auto z-50 md:hidden">
+    <svg
+      *ngIf="!menuOpen"
+      class="w-7 h-7 text-black"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+
+    <svg
+      *ngIf="menuOpen"
+      class="w-7 h-7 text-black"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 6l12 12M6 18L18 6"
+      />
+    </svg>
+  </button>
+
+  <!-- Dropdown - também apenas no mobile -->
+  <div
+    *ngIf="menuOpen"
+    class="fixed left-2 top-24 bg-white shadow-lg rounded-md p-4 flex flex-col gap-3 z-[9999] w-[200px] md:hidden"
+  >
+    <!--<button
+      (click)="goToUserProfile()"
+      class="text-black w-full rounded-xl font-bold hover:bg-[#c70020] transition py-2 hover:text-white"
+    >
+      Fale conosco
+    </button>-->
+
+    <!-- SOMENTE MOBILE -->
+    <a
+      href="https://wa.me/558296285774?text=Olá,%20vim%20do%20site%20Renata%20Scrubs%20e%20gostaria%20de%20ver%20o%20catálogo%20de%20SCRUBS%20FEMININOS"
+      target="_blank"
+      class="hover:text-orange-500"
+      >SCRUBS FEMININO</a
+    >
+
+    <a
+      href="https://wa.me/558296285774?text=Olá,%20vim%20do%20site%20Renata%20Scrubs%20e%20gostaria%20de%20ver%20o%20catálogo%20de%20SCRUBS%20MASCULINOS"
+      target="_blank"
+      class="hover:text-orange-500"
+      >SCRUBS MASCULINOS</a
+    >
+
+    <a
+      href="https://wa.me/558296285774?text=Olá,%20vim%20do%20site%20Renata%20Scrubs%20e%20gostaria%20de%20ver%20o%20catálogo%20de%20JALECOS"
+      target="_blank"
+      class="hover:text-orange-500"
+      >JALECOS</a
+    >
+
+    <a
+      href="https://wa.me/558296285774?text=Olá,%20vim%20do%20site%20Renata%20Scrubs%20e%20gostaria%20de%20ver%20o%20catálogo%20de%20PLUS%20SIZE"
+      target="_blank"
+      class="hover:text-orange-500"
+      >PLUS SIZE</a
+    >
+
+    <a
+      href="https://wa.me/558296285774?text=Olá,%20vim%20do%20site%20Renata%20Scrubs%20e%20gostaria%20de%20ver%20o%20catálogo%20PARA%20EMPRESAS"
+      target="_blank"
+      class="hover:text-orange-500"
+      >PARA EMPRESAS</a
+    >
+  </div>
+
+  }
+</div>

@@ -1,0 +1,17 @@
+<section
+  class="relative w-full h-10 overflow-hidden bg-orange-600 flex items-center justify-center"
+>
+  <div class="w-full overflow-hidden">
+    <div
+      class="flex transition-transform duration-500"
+      [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+    >
+      <div
+        *ngFor="let phrase of phrases"
+        class="flex-shrink-0 w-full justify-center items-center text-center"
+      >
+        <p class="text-white font-semibold text-sm">{{ phrase }}</p>
+      </div>
+    </div>
+  </div>
+</section>
